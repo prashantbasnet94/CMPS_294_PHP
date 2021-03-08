@@ -85,7 +85,7 @@ if($operation == 'add' ){
 	}else{
 		$_SESSION['search_result'] = "no matches found";
 	}
-	header("Refresh:0,url=result_page.php");
+	header("Refresh:0,url=result-page.php");
 
 }
 ?>
