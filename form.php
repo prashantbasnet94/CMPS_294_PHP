@@ -6,7 +6,7 @@
 
 	?>
 
-	<form action="process-form.php" method="post">
+	<form action="operations.php" method="post">
 		<h5> Book Inverntory Management </h5>
 
 		<select class="select" name="operation" id="operation">
@@ -30,7 +30,7 @@
 
 		<div>
 			<label>ISBN:</label>
-			<input type="text" name="isbn" placeholder="Enter the book ISBN here" required>
+			<input type="text" name="isbn" placeholder="Enter the book ISBN here" >
 			<span><?php echo $_SESSION['isbnErr']?></span>
 		</div>
 

@@ -17,7 +17,7 @@
          ?>
 
             <div>
-             <button><a style="color:white;" href="/test"> Go back to form page </a> </button>
+             <button><a style="color:white;" href="/form"> Go back to form page </a> </button>
              <button><a href= "read_file.php"> Check database file </a></button>
             </div>
         </div>
