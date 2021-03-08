@@ -6,7 +6,7 @@
 
 	?>
 
-	<form action="operations.php" method="post">
+	<form action="process-form.php" method="post">
 		<h5> Book Inverntory Management </h5>
 
 		<select class="select" name="operation" id="operation">
@@ -46,6 +46,9 @@
 			<span><?php echo $_SESSION['yearErr']?></span>
 		</div>
 
+		<div>
+			<button type ="submit" name="submit" value="submit">Submit</button>
+		</div>
 
 		
 	</form>

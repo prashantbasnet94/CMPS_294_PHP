@@ -1,3 +1,49 @@
+
+<?php
+session_start();
+
+if(isset($_POST['submit'])) {
+
+	if(empty($_POST["title"])){
+		$_SESSION['titleErr']="Title is required"
+	} else{
+		$title = $_SESSION['title']=$_POST['title'];
+	}
+
+	if(empty($_POST["author"])){
+		$_SESSION['authorErr']="Author is required"
+	}else{
+		$author = $_SESSION['author']=$_POST['author'];
+	}
+
+	if(empty($_POST["isbn"])){
+		$_SESSION['isbn']="ISBN is required"
+	}else{
+		$isbn = $_SESSION['isbn']=$_POST['isbn'];
+	}
+
+	if(empty($_POST["publisher"])){
+		$_SESSION['publisherErr']="publisher is required"
+	}else{
+		$publisher = $_SESSION['publisher']=$_POST['publisher'];
+	}
+
+	if(empty($_POST["year"])){
+		$_SESSION['yearErr']="Year is required"
+	}else{
+		$title = $_SESSION['year']=$_POST['year'];
+	}
+	$operation = $_SESSION['operation'] = $_POST['operation']
+
+	$file_location ="database.txt";
+	$file = fopen($file_location,"a+");
+
+	if(empty($title) | empty($author) | empty($isbn) | empty($publisher) | empty($year)){
+		header("url=form.php")
+	}
+	
+}
+
 if($operation == 'add' ){
 	
 	$string = $title . '%'  . $author . '%' . $isbn . '%' . $publisher . '%' . $year;
@@ -16,7 +62,7 @@ if($operation == 'add' ){
 	$_SESSION['message'] = "Book has been deleted from the database file"
 	header("Refresh:0; url=result_page.php")
 }else if( $operation == 'search'){
-	
+
 	unset($_SESSION['message']);
 	$string = $title . '%'  . $author . '%' . $isbn . '%' . $publisher . '%' . $year;
 
@@ -35,3 +81,5 @@ if($operation == 'add' ){
 	header("Refresh:0,url=result_page.php");
 
 }
+?>
+
